@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import { setUserEmail, setLocalId } from '../../store/slices/userSlice';
 import { saveSession, clearSession } from '../../db';
 
+
 const textInputWidth = Dimensions.get('window').width * 0.7
 
 const LoginScreen = ({ navigation, route }) => {
