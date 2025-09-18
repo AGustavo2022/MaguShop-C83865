@@ -123,7 +123,7 @@ const ProfileScreen = () => {
             </View>
             <View style={styles.placeDescriptionContainer}>
                 <View style={styles.addressContainer}>
-                    <Text style={styles.address}>{address || ""}</Text>
+                    <Text style={styles.address}>{address || "No se encontro Dirccion"}</Text>
                 </View>
             </View>
         </View>
