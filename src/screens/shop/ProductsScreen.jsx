@@ -1,5 +1,4 @@
 import { StyleSheet, Text, View, FlatList,Pressable } from 'react-native'
-//import products from '../../data/products.json'
 import FlatCard from '../../components/FlatCard'
 import { colors } from '../../global/colors'
 import { useEffect, useState } from 'react'
