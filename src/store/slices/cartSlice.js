@@ -31,8 +31,18 @@ const cartSlice = createSlice({
             state.total = state.cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0)
         },
         removeItems: (state, action) => {
-            state.cartItems = state.cartItems.filter(item => item.id !== action.payload)
-            state.total = state.cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+            const itemIndex = state.cartItems.findIndex(item => item.id === action.payload);
+            if (itemIndex >= 0) {
+                if (state.cartItems[itemIndex].quantity > 1) {
+                    state.cartItems[itemIndex].quantity -= 1;
+                } else {
+                    state.cartItems = state.cartItems.filter(item => item.id !== action.payload);
+                }
+            }
+            state.total = state.cartItems.reduce(
+                (acc, item) => acc + (item.price * item.quantity),
+                0
+            );
             state.updatedAt = new Date().toLocaleString();
         },
         clearCart: (state, action) => {
@@ -43,6 +53,10 @@ const cartSlice = createSlice({
     }
 })
 
-export const {addItemTocart,removeItems,clearCart} = cartSlice.actions
+export const {
+    addItemTocart,
+    removeItems,
+    clearCart
+} = cartSlice.actions
 
 export default cartSlice.reducer
