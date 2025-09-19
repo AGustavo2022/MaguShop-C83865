@@ -11,8 +11,9 @@ const ShopStackNavigator = () => {
         <Stack.Navigator
             initialRouteName="Categorías"
             screenOptions={{
-                header: ({route})=>(<Header title="Magu Accesories" 
-                    subtitle={route.name==="Categorías"?"Home":categorySelected}                
+                header: ({route})=>(<Header title="MAGU" title2="ACCESORIOS"
+                    subtitle={route.name==="Categorías"?"":categorySelected}
+                    // subtitle={route.name==="Categorías"?"Home":categorySelected}                  
                     />)
             }}
         >

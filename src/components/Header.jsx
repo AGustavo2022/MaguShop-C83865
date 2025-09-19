@@ -6,7 +6,7 @@ import { clearSession } from '../db'
 import { clearUser } from '../store/slices/userSlice'
 import { useDispatch } from 'react-redux'
 
-const Header = ({ title, subtitle }) => {
+const Header = ({ title, title2, subtitle }) => {
   const navigation = useNavigation()
 
   const canGoBack = navigation.canGoBack()
@@ -28,7 +28,7 @@ const Header = ({ title, subtitle }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
-      <Text style={styles.subtitle}>{subtitle}</Text>
+      <Text style={styles.title2}>{title2}</Text>
       <View style={styles.iconsContainer}>
         <View>
         {
@@ -36,6 +36,7 @@ const Header = ({ title, subtitle }) => {
         }
         {/* <Image source={require('../../assets/logoo.svg')} /> No se puede SVG así */}
         </View>
+        <Text style={styles.subtitle}>{subtitle}</Text>
         <Pressable style={styles.logout} onPress={handleClearSession}><Icon name="log-out" size={32} color={colors.primaryText} /></Pressable>
       </View>
 
@@ -51,20 +52,27 @@ export default Header
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.primary,
-    height: 140,
-    paddingTop: 24,
+    height: 180,
+    paddingTop: 50,
     justifyContent: "center",
 
   },
   title: {
-    fontSize: 16,
+    fontSize: 40,
     color: colors.primaryText,
-    fontFamily: "PressStart2P-Regular",
+    fontFamily: "Belleza-Regular",
+    textAlign:"center",
+  },
+    title2: {
+    fontSize: 24,
+    color: colors.secondaryTest,
+    fontFamily: "Belleza-Regular",
     textAlign:"center",
   },
   subtitle: {
     fontSize: 14,
     color: colors.primaryText,
+    fontFamily: "JosefinSans-Regular",
     textAlign:"center"
   },
   goBackIcon: {
