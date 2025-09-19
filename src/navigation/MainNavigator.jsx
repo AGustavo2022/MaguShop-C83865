@@ -23,7 +23,7 @@ const MainNavigator = () => {
     useEffect(() => {
         const bootstrap = async () => {
             await initSessionTable();
-            const session = await getSession(); //En SQLite
+            const session = await getSession();
             if (session) {
                 console.log("Session:", session)
                 dispatch(setUserEmail(session.email))

@@ -9,5 +9,10 @@ export const colors = {
     "purple":"#6A1B9A",
     "yellow":"#FFEB3B",
     "brightOrange":"#FF5722",
-    "red":"#cd3327"
+    "red":"#cd3327",
+    "primary": "#92394B",
+    "secondary": "#A9767A",
+    "primaryText": "#F1F2CE",
+    "secondaryTest": "#D1B4A2",
+
 }

@@ -1,7 +1,7 @@
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import MainNavigator from './src/navigation/MainNavigator';
 import { Provider } from 'react-redux';
 import { store } from './src/store';

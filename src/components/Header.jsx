@@ -32,11 +32,11 @@ const Header = ({ title, subtitle }) => {
       <View style={styles.iconsContainer}>
         <View>
         {
-          canGoBack && <Pressable onPress={() => navigation.goBack()}><Icon name="arrow-left-circle" size={32} color={colors.white} /></Pressable>
+          canGoBack && <Pressable onPress={() => navigation.goBack()}><Icon name="arrow-left-circle" size={32} color={colors.primaryText} /></Pressable>
         }
         {/* <Image source={require('../../assets/logoo.svg')} /> No se puede SVG así */}
         </View>
-        <Pressable style={styles.logout} onPress={handleClearSession}><Icon name="log-out" size={32} color={colors.white} /></Pressable>
+        <Pressable style={styles.logout} onPress={handleClearSession}><Icon name="log-out" size={32} color={colors.primaryText} /></Pressable>
       </View>
 
     </View>
@@ -50,20 +50,21 @@ export default Header
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.purple,
-    height: 160,
+    backgroundColor: colors.primary,
+    height: 140,
+    paddingTop: 24,
     justifyContent: "center",
-    //alignItems: "center"
+
   },
   title: {
-    fontSize: 20,
-    color: colors.white,
+    fontSize: 16,
+    color: colors.primaryText,
     fontFamily: "PressStart2P-Regular",
-    textAlign:"center"
+    textAlign:"center",
   },
   subtitle: {
     fontSize: 14,
-    color: colors.white,
+    color: colors.primaryText,
     textAlign:"center"
   },
   goBackIcon: {
