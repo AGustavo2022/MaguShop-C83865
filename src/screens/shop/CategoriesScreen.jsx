@@ -7,10 +7,8 @@ import { useGetCategoriesQuery } from '../../services/shopApi';
 
 const CategoriesScreen = ({navigation}) => {
 
-    //const categories = useSelector(state=>state.shopReducer.categories)
     const {data:categories, isLoading, error} = useGetCategoriesQuery()
 
-    //console.log("Categories desde firebase",cateogires, isLoading,error )
 
     const dispatch = useDispatch()
 
