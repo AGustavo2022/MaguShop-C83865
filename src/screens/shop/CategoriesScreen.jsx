@@ -1,7 +1,6 @@
 import { StyleSheet, Text, View, Image, FlatList,Pressable } from 'react-native'
-//import categories from '../../data/categories.json'
 import FlatCard from '../../components/FlatCard';
-import { useSelector,useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setCategorySelected } from '../../store/slices/shopSlice';
 import { useGetCategoriesQuery } from '../../services/shopApi';
 
@@ -18,12 +17,11 @@ const CategoriesScreen = ({navigation}) => {
     }
 
     const renderCategoryItem = ({ item }) => {
-        //console.log(item)
         return (
             <Pressable onPress={()=>handleSelectCategory(item.title)}>
                 <FlatCard style={styles.cardCustom}>
                     <Text style={styles.title}>{item.title}</Text>
-                    <Image width={120} height={50} source={{ uri: item.image }} resizeMode='contain' />
+                    {/* <Image width={120} height={50} source={{ uri: item.image }} resizeMode='contain' /> */}
                 </FlatCard>
             </Pressable>
         )
@@ -43,6 +41,6 @@ const styles = StyleSheet.create({
     cardCustom: {
         //backgroundColor:"green"
     },title:{
-        fontFamily:"Karla-Bold"
+        fontFamily:"JosefinSans-Regular"
     }
 })
