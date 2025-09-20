@@ -47,18 +47,19 @@ const LoginScreen = ({ navigation, route }) => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>MaGu Accesorie</Text>
+            <Text style={styles.title}>MAGU</Text>
+            <Text style={styles.title2}>ACESORIOS</Text>
             <Text style={styles.subTitle}>Inicia sesión</Text>
             <View style={styles.inputContainer}>
                 <TextInput
                     onChangeText={(text) => setEmail(text)}
-                    placeholderTextColor={colors.white}
+                    placeholderTextColor={colors.primaryText}
                     placeholder="Email"
                     style={styles.textInput}
                 />
                 <TextInput
                     onChangeText={(text) => setPassword(text)}
-                    placeholderTextColor={colors.white}
+                    placeholderTextColor={colors.primaryText}
                     placeholder='Password'
                     style={styles.textInput}
                     secureTextEntry
@@ -80,7 +81,7 @@ const LoginScreen = ({ navigation, route }) => {
 
             <Pressable style={styles.btn} onPress={onsubmit}><Text style={styles.btnText}>Iniciar sesión</Text></Pressable>
             <View style={styles.rememberMe}>
-                <Text style={{ color: colors.white }}>¿Mantener sesión iniciada?</Text>
+                <Text style={{ color: colors.primaryText }}>¿Mantener sesión iniciada?</Text>
                 <Switch
                     onValueChange={() => setPersistSession(!persistSession)}
                     value={persistSession}
@@ -98,24 +99,28 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: colors.purple
+        backgroundColor: colors.primary
     },
     title: {
-        color: colors.neonGreen,
+        color: colors.primaryText,
         fontFamily: "PressStart2P",
+        fontSize: 40
+    },
+    title2: {
+        color: colors.secondaryTest,
+        fontFamily: "Belleza-Regular",
         fontSize: 24
     },
     subTitle: {
-        fontFamily: "Montserrat",
+        fontFamily: "JosefinSans-Regular",
         fontSize: 18,
-        color: colors.yellow,
-        fontWeight: '700',
-        letterSpacing: 3
+        color: colors.primaryText,
+        marginTop: 56
     },
     inputContainer: {
         gap: 16,
         margin: 16,
-        marginTop: 48,
+        marginTop: 16,
         alignItems: 'center',
 
     },
@@ -123,6 +128,7 @@ const styles = StyleSheet.create({
         padding: 8,
         paddingLeft: 16,
         borderRadius: 16,
+        fontFamily: "JosefinSans-Regular",
         backgroundColor: colors.darkGray,
         width: textInputWidth,
         color: colors.white,
@@ -132,7 +138,7 @@ const styles = StyleSheet.create({
         gap: 8,
     },
     whiteText: {
-        color: colors.white
+        color: colors.primaryText
     },
     underLineText: {
         textDecorationLine: 'underline',
@@ -144,12 +150,13 @@ const styles = StyleSheet.create({
     btn: {
         padding: 16,
         paddingHorizontal: 32,
-        backgroundColor: colors.black,
+        backgroundColor: colors.secondaryTest,
         borderRadius: 16,
         marginTop: 32
     },
     btnText: {
-        color: colors.white,
+        color: colors.primaryText,
+        fontFamily: "JosefinSans-Regular",
         fontSize: 16,
         fontWeight: '700'
     },
