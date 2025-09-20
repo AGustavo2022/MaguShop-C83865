@@ -21,7 +21,7 @@ const CategoriesScreen = ({navigation}) => {
             <Pressable onPress={()=>handleSelectCategory(item.title)}>
                 <FlatCard style={styles.cardCustom}>
                     <Text style={styles.title}>{item.title}</Text>
-                    {/* <Image width={120} height={50} source={{ uri: item.image }} resizeMode='contain' /> */}
+                    <Image width={120} height={80} source={{ uri: item.image }} resizeMode='contain' />
                 </FlatCard>
             </Pressable>
         )
@@ -39,8 +39,9 @@ export default CategoriesScreen
 
 const styles = StyleSheet.create({
     cardCustom: {
-        //backgroundColor:"green"
+
     },title:{
-        fontFamily:"JosefinSans-Regular"
+        fontFamily:"JosefinSans-Regular",
+        marginRight: 16
     }
 })
