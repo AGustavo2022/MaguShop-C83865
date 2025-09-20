@@ -3,10 +3,12 @@ import { colors } from '../../global/colors'
 import { useSelector,useDispatch } from 'react-redux'
 import { addItemTocart } from '../../store/slices/cartSlice'
 
+
 const ProductScreen = () => {
     const product = useSelector(state=>state.shopReducer.productSelected)
     const { width } = useWindowDimensions()
     const dispatch = useDispatch()
+    console.log('producto',product)
     return (
         <ScrollView style={styles.productContainer}>
             <Text style={styles.textBrand}>{product.brand}</Text>
@@ -49,7 +51,7 @@ export default ProductScreen
 const styles = StyleSheet.create({
     productContainer: {
         paddingHorizontal: 16,
-        marginVertical: 16
+        marginVertical: 16,
     },
     textBrand: {
         color: colors.grisOscuro,

@@ -3,19 +3,26 @@ import FlatCard from '../../components/FlatCard'
 import { colors } from '../../global/colors'
 import { useEffect, useState } from 'react'
 import Search from '../../components/Search'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useGetProductsByCategoryQuery } from '../../services/shopApi'
+import { setProductSelected } from '../../store/slices/shopSlice'
 
 
 const ProductsScreen = ({ navigation }) => {
     const [productsFiltered, setProductsFiltered] = useState([])
     const [keyword, setKeyword] = useState("")
 
-    const products = useSelector(state=>state.shopReducer.products)
     const category = useSelector(state=>state.shopReducer.categorySelected)
 
     const {data: productsFilteredByCategory, isLoading, error} = useGetProductsByCategoryQuery(category.toLowerCase())
 
+    const dispatch = useDispatch()
+
+    const handleSelectProduct = (product) => {
+        dispatch(setProductSelected(product))
+        navigation.navigate("Producto")
+    }
+    
     useEffect(() => {
         if (keyword) {
             const productsFilteredByKeyword = productsFilteredByCategory.filter(
@@ -27,14 +34,17 @@ const ProductsScreen = ({ navigation }) => {
         }
     }, [category, keyword,productsFilteredByCategory])
 
+    
     const renderProductItem = ({ item }) => (
-        <Pressable onPress={()=>navigation.navigate("Producto",{product:item})}>
+        <Pressable onPress={() => handleSelectProduct(item)}>
             <FlatCard>
                 <Text>{item.title}</Text>
             </FlatCard>
         </Pressable>
 
-    )
+)
+
+    console.log('produtos de produts',productsFiltered)
 
     return (
         <>
