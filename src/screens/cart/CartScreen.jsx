@@ -56,7 +56,7 @@ const CartScreen = () => {
           />
 
           :
-          <JosefinSansRegular>Aún no hay productos en el carrito</JosefinSansRegular>
+          <JosefinSansRegular style={styles.productNot}>Aún no hay productos en el carrito</JosefinSansRegular>
       }
     </>
   )
@@ -123,6 +123,10 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     textAlign: "center",
     paddingVertical: 8
+  },
+  productNot: {
+    paddingTop: 48,
+    paddingLeft: 72
   }
 
 })
