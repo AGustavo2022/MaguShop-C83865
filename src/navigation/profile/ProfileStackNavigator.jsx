@@ -9,7 +9,7 @@ const ProfileStackNavigator = () => {
         <Stack.Navigator
             initialRouteName="Perfil"
             screenOptions={{
-                header: ({route})=>(<Header title="Mundo Geek" subtitle="Perfil"/>)
+                header: ({route})=>(<Header title="MAGU" title2="ACCESORIOS" subtitle={route.name}/>)
             }}
         >
             <Stack.Screen name="Perfil" component={ProfileScreen} />
