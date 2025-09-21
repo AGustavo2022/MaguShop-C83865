@@ -10,11 +10,8 @@ SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const [loaded, error] = useFonts({
-    'Karla-Regular': require('./assets/fonts/Karla-Regular.ttf'),
-    'Karla-Bold': require('./assets/fonts/Karla-Bold.ttf'),
-    'Karla-Light': require('./assets/fonts/Karla-Light.ttf'),
-    'Karla-Italic': require('./assets/fonts/Karla-Italic.ttf'),
-    'PressStart2P-Regular': require('./assets/fonts/PressStart2P-Regular.ttf'),
+    'Belleza-Regular': require('./assets/fonts/Belleza-Regular.ttf'),
+    'JosefinSans-Regular': require('./assets/fonts/JosefinSans-Regular.ttf'),
   });
 
   useEffect(() => {
