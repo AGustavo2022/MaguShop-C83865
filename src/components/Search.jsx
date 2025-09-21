@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     searchInput:{
         borderWidth:1,
         borderColor:colors.darkGray,
+        fontFamily: "JosefinSans-Regular",
         borderRadius:16,
         minWidth: "90%",
         paddingLeft:32
