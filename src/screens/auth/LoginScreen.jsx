@@ -5,6 +5,8 @@ import { useLoginMutation } from '../../services/authApi';
 import { useDispatch } from 'react-redux';
 import { setUserEmail, setLocalId } from '../../store/slices/userSlice';
 import { saveSession, clearSession } from '../../db';
+import BellezaRegular from '../../components/Belleza-Regular';
+import JosefinSansRegular from '../../components/JosefinSans-Regular';
 
 
 const textInputWidth = Dimensions.get('window').width * 0.7
@@ -47,9 +49,9 @@ const LoginScreen = ({ navigation, route }) => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>MAGU</Text>
-            <Text style={styles.title2}>ACESORIOS</Text>
-            <Text style={styles.subTitle}>Inicia sesión</Text>
+            <BellezaRegular style={styles.title}>MAGU</BellezaRegular>
+            <BellezaRegular style={styles.title2}>ACESORIOS</BellezaRegular>
+            <JosefinSansRegular style={styles.subTitle}>Inicia sesión</JosefinSansRegular>
             <View style={styles.inputContainer}>
                 <TextInput
                     onChangeText={(text) => setEmail(text)}
@@ -66,22 +68,22 @@ const LoginScreen = ({ navigation, route }) => {
                 />
             </View>
             <View style={styles.footTextContainer}>
-                <Text style={styles.whiteText}>¿No tienes una cuenta?</Text>
+                <JosefinSansRegular style={styles.whiteText}>¿No tienes una cuenta?</JosefinSansRegular>
                 <Pressable onPress={() => navigation.navigate('Signup')}>
-                    <Text style={
+                    <JosefinSansRegular style={
                         {
                             ...styles.whiteText,
                             ...styles.underLineText
                         }
                     }>
                         Crea una
-                    </Text>
+                    </JosefinSansRegular>
                 </Pressable>
             </View>
 
-            <Pressable style={styles.btn} onPress={onsubmit}><Text style={styles.btnText}>Iniciar sesión</Text></Pressable>
+            <Pressable style={styles.btn} onPress={onsubmit}><JosefinSansRegular style={styles.btnText}>Iniciar sesión</JosefinSansRegular></Pressable>
             <View style={styles.rememberMe}>
-                <Text style={{ color: colors.primaryText }}>¿Mantener sesión iniciada?</Text>
+                <JosefinSansRegular style={{ color: colors.primaryText }}>¿Mantener sesión iniciada?</JosefinSansRegular>
                 <Switch
                     onValueChange={() => setPersistSession(!persistSession)}
                     value={persistSession}
@@ -103,16 +105,13 @@ const styles = StyleSheet.create({
     },
     title: {
         color: colors.primaryText,
-        fontFamily: "PressStart2P",
         fontSize: 40
     },
     title2: {
         color: colors.secondaryTest,
-        fontFamily: "Belleza-Regular",
         fontSize: 24
     },
     subTitle: {
-        fontFamily: "JosefinSans-Regular",
         fontSize: 18,
         color: colors.primaryText,
         marginTop: 56
@@ -156,7 +155,6 @@ const styles = StyleSheet.create({
     },
     btnText: {
         color: colors.primaryText,
-        fontFamily: "JosefinSans-Regular",
         fontSize: 16,
         fontWeight: '700'
     },

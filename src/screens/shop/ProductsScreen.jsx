@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View, FlatList,Pressable } from 'react-native'
 import FlatCard from '../../components/FlatCard'
-import { colors } from '../../global/colors'
 import { useEffect, useState } from 'react'
 import Search from '../../components/Search'
 import { useDispatch, useSelector } from 'react-redux'
 import { useGetProductsByCategoryQuery } from '../../services/shopApi'
 import { setProductSelected } from '../../store/slices/shopSlice'
+import JosefinSansRegular from '../../components/JosefinSans-Regular'
 
 
 const ProductsScreen = ({ navigation }) => {
@@ -38,7 +38,7 @@ const ProductsScreen = ({ navigation }) => {
     const renderProductItem = ({ item }) => (
         <Pressable onPress={() => handleSelectProduct(item)}>
             <FlatCard>
-                <Text>{item.title}</Text>
+                <JosefinSansRegular>{item.title}</JosefinSansRegular>
             </FlatCard>
         </Pressable>
 

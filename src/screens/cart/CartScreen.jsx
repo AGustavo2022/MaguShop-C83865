@@ -4,6 +4,7 @@ import FlatCard from '../../components/FlatCard'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { useDispatch, useSelector } from 'react-redux'
 import { removeItems } from '../../store/slices/cartSlice'
+import JosefinSansRegular from '../../components/JosefinSans-Regular'
 
 const CartScreen = () => {
   const cartItems = useSelector(state=>state.cartReducer.cartItems)
@@ -12,9 +13,9 @@ const CartScreen = () => {
   
   const FooterComponent = () => (
     <View style={styles.footerContainer}>
-      <Text style={styles.footerTotal}>Total: $ {total} </Text>
+      <JosefinSansRegular style={styles.footerTotal}>Total: $ {total} </JosefinSansRegular>
       <Pressable style={styles.confirmButton}>
-        <Text style={styles.confirmButtonText}>Confirmar</Text>
+        <JosefinSansRegular style={styles.confirmButtonText}>Confirmar</JosefinSansRegular>
       </Pressable>
     </View>
   )
@@ -29,11 +30,11 @@ const CartScreen = () => {
         />
       </View>
       <View style={styles.cartDescription}>
-        <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.description}>{item.shortDescription}</Text>
-        <Text style={styles.price}>Precio unitario: $ {item.price}</Text>
-        <Text stlyle={styles.quantity}>Cantidad: {item.quantity}</Text>
-        <Text style={styles.total}>Total: $ {item.quantity * item.price}</Text>
+        <JosefinSansRegular style={styles.title}>{item.title}</JosefinSansRegular>
+        <JosefinSansRegular style={styles.description}>{item.shortDescription}</JosefinSansRegular>
+        <JosefinSansRegular style={styles.price}>Precio unitario: $ {item.price}</JosefinSansRegular>
+        <JosefinSansRegular stlyle={styles.quantity}>Cantidad: {item.quantity}</JosefinSansRegular>
+        <JosefinSansRegular style={styles.total}>Total: $ {item.quantity * item.price}</JosefinSansRegular>
         <Pressable onPress={() => dispatch(removeItems(item.id))}>
           <Icon name="delete" size={24} color={colors.red} style={styles.trashIcon} />
         </Pressable>
@@ -55,7 +56,7 @@ const CartScreen = () => {
           />
 
           :
-          <Text>Aún no hay productos en el carrito</Text>
+          <JosefinSansRegular>Aún no hay productos en el carrito</JosefinSansRegular>
       }
     </>
   )

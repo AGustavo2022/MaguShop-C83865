@@ -8,6 +8,7 @@ import { usePutProfilePictureMutation } from '../../services/profileApi'
 import { setImage } from '../../store/slices/userSlice'
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
+import JosefinSansRegular from '../../components/JosefinSans-Regular'
 
 const ProfileScreen = () => {
     const [location, setLocation] = useState("")
@@ -23,8 +24,6 @@ const ProfileScreen = () => {
 
     const dispatch = useDispatch()
 
-    //console.log("Location:", location)
-    //console.log("localId desde profileScreen:", localId)
     console.log("Address", address)
 
     const pickImage = async () => {
@@ -36,7 +35,6 @@ const ProfileScreen = () => {
             base64: true
         })
 
-        //console.log(result)
         if (!result.canceled) {
             const imgBase64 = `data:image/jpeg;base64,${result.assets[0].base64}`
             dispatch(setImage(imgBase64))
@@ -59,7 +57,6 @@ const ProfileScreen = () => {
                         `https://maps.googleapis.com/maps/api/geocode/json?latlng=${location.coords.latitude},${location.coords.longitude}&key=${process.env.EXPO_PUBLIC_MAPS_KEY}`
                     );
                     const data = await response.json()
-                    //console.log("Data desde geocoding", data)
                     setLocation(location)
                     setAddress(data.results[0].formatted_address)
                 }
@@ -87,7 +84,7 @@ const ProfileScreen = () => {
                     <CameraIcon />
                 </Pressable>
             </View>
-            <Text style={styles.profileData}>Email: {user} </Text>
+            <JosefinSansRegular style={styles.profileData}>Email: {user} </JosefinSansRegular>
             <View style={styles.mapContainer}>
                 {
                     location
@@ -107,7 +104,7 @@ const ProfileScreen = () => {
                         (
                             locationLoaded
                                 ?
-                                <Text>Hubo un problema al obtener la ubicación</Text>
+                                <JosefinSansRegular>Hubo un problema al obtener la ubicación</JosefinSansRegular>
                                 :
                                 <ActivityIndicator />
                         )
@@ -116,14 +113,14 @@ const ProfileScreen = () => {
                 }
                 <View style={styles.placeDescriptionContainer}>
                     <View style={styles.addressContainer}>
-                        <Text>Dirección:</Text>
+                        <JosefinSansRegular>Dirección:</JosefinSansRegular>
                         <Text style={styles.address}>{address || ""}</Text>
                     </View>
                 </View>
             </View>
             <View style={styles.placeDescriptionContainer}>
                 <View style={styles.addressContainer}>
-                    <Text style={styles.address}>{address || "No se encontro Dirccion"}</Text>
+                    <JosefinSansRegular style={styles.address}>{address || "No se encontro Direccion"}</JosefinSansRegular>
                 </View>
             </View>
         </View>

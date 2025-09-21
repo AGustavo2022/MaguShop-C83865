@@ -2,6 +2,8 @@ import { StyleSheet, Text, View, Pressable, Image, ScrollView, useWindowDimensio
 import { colors } from '../../global/colors'
 import { useSelector,useDispatch } from 'react-redux'
 import { addItemTocart } from '../../store/slices/cartSlice'
+import JosefinSansRegular from '../../components/JosefinSans-Regular'
+import BellezaRegular from '../../components/Belleza-Regular'
 
 
 const ProductScreen = () => {
@@ -11,8 +13,8 @@ const ProductScreen = () => {
     console.log('producto',product)
     return (
         <ScrollView style={styles.productContainer}>
-            <Text style={styles.textBrand}>{product.brand}</Text>
-            <Text style={styles.textTitle}>{product.title}</Text>
+            <JosefinSansRegular style={styles.textBrand}>{product.brand}</JosefinSansRegular>
+            <BellezaRegular style={styles.textTitle}>{product.title}</BellezaRegular>
             <Image
                 source={{ uri: product.mainImage }}
                 alt={product.title}
@@ -20,27 +22,27 @@ const ProductScreen = () => {
                 height={width * .7}
                 resizeMode='contain'
             />
-            <Text style={styles.longDescription}>{product.longDescription}</Text>
+            <JosefinSansRegular style={styles.longDescription}>{product.longDescription}</JosefinSansRegular>
             <View style={styles.tagsContainer}>
                 <View style={styles.tags}>
-                    <Text style={styles.tagText}>Tags : </Text>
+                    <JosefinSansRegular style={styles.tagText}>Tags : </JosefinSansRegular>
                     {
-                        product.tags?.map(tag => <Text key={Math.random()} style={styles.tagText}>{tag}</Text>)
+                        product.tags?.map(tag => <JosefinSansRegular key={Math.random()} style={styles.tagText}>{tag}</JosefinSansRegular>)
                     }
                 </View>
 
                 {
-                    product.discount > 0 && <View style={styles.discount}><Text style={styles.discountText}>-{product.discount}%</Text></View>
+                    product.discount > 0 && <View style={styles.discount}><JosefinSansRegular style={styles.discountText}>-{product.discount}%</JosefinSansRegular></View>
                 }
             </View>
             {
                 product.stock <= 0 && <Text style={styles.noStockText}>Sin Stock</Text>
             }
-            <Text style={styles.price}>Precio: ${product.price}</Text>
+            <JosefinSansRegular style={styles.price}>Precio: ${product.price}</JosefinSansRegular>
             <Pressable
                 style={({ pressed }) => [{ opacity: pressed ? 0.95 : 1 }, styles.addToCartButton]}
                 onPress={()=>dispatch(addItemTocart({product:product,quantity:1}))}>
-                <Text style={styles.textAddToCart}>Agregar al carrito</Text>
+                <JosefinSansRegular style={styles.textAddToCart}>Agregar al carrito</JosefinSansRegular>
             </Pressable>
         </ScrollView>
     )

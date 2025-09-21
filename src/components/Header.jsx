@@ -5,6 +5,8 @@ import Icon from 'react-native-vector-icons/Feather'
 import { clearSession } from '../db'
 import { clearUser } from '../store/slices/userSlice'
 import { useDispatch } from 'react-redux'
+import BellezaRegular from './Belleza-Regular'
+import JosefinSansRegular from './JosefinSans-Regular'
 
 const Header = ({ title, title2, subtitle }) => {
   const navigation = useNavigation()
@@ -27,8 +29,8 @@ const Header = ({ title, title2, subtitle }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{title}</Text>
-      <Text style={styles.title2}>{title2}</Text>
+      <BellezaRegular style={styles.title}>{title}</BellezaRegular>
+      <BellezaRegular style={styles.title2}>{title2}</BellezaRegular>
       <View style={styles.iconsContainer}>
         <View>
         {
@@ -36,7 +38,7 @@ const Header = ({ title, title2, subtitle }) => {
         }
         {/* <Image source={require('../../assets/logoo.svg')} /> No se puede SVG así */}
         </View>
-        <Text style={styles.subtitle}>{subtitle}</Text>
+        <JosefinSansRegular style={styles.subtitle}>{subtitle}</JosefinSansRegular>
         <Pressable style={styles.logout} onPress={handleClearSession}><Icon name="log-out" size={32} color={colors.primaryText} /></Pressable>
       </View>
 
@@ -55,30 +57,21 @@ const styles = StyleSheet.create({
     height: 180,
     paddingTop: 50,
     justifyContent: "center",
-
   },
   title: {
     fontSize: 40,
     color: colors.primaryText,
-    fontFamily: "Belleza-Regular",
     textAlign:"center",
   },
     title2: {
     fontSize: 24,
     color: colors.secondaryTest,
-    fontFamily: "Belleza-Regular",
     textAlign:"center",
   },
   subtitle: {
     fontSize: 14,
     color: colors.primaryText,
-    fontFamily: "JosefinSans-Regular",
     textAlign:"center"
-  },
-  goBackIcon: {
-    //position:"absolute",
-    //bottom:0,
-    //left:0  
   },
   iconsContainer:{
     flexDirection:"row",

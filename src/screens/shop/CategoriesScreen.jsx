@@ -3,6 +3,8 @@ import FlatCard from '../../components/FlatCard';
 import { useDispatch } from 'react-redux';
 import { setCategorySelected } from '../../store/slices/shopSlice';
 import { useGetCategoriesQuery } from '../../services/shopApi';
+import JosefinSansRegular from '../../components/JosefinSans-Regular';
+
 
 const CategoriesScreen = ({navigation}) => {
 
@@ -20,7 +22,7 @@ const CategoriesScreen = ({navigation}) => {
         return (
             <Pressable onPress={()=>handleSelectCategory(item.title)}>
                 <FlatCard style={styles.cardCustom}>
-                    <Text style={styles.title}>{item.title}</Text>
+                    <JosefinSansRegular style={styles.title}>{item.title}</JosefinSansRegular>
                     <Image width={120} height={80} source={{ uri: item.image }} resizeMode='contain' />
                 </FlatCard>
             </Pressable>
@@ -41,7 +43,6 @@ const styles = StyleSheet.create({
     cardCustom: {
 
     },title:{
-        fontFamily:"JosefinSans-Regular",
         marginRight: 16
     }
 })
