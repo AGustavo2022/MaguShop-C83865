@@ -5,10 +5,13 @@ import ProfileStackNavigator from '../profile/ProfileStackNavigator';
 import Icon from 'react-native-vector-icons/Feather'
 import { StyleSheet, View } from 'react-native';
 import { colors } from '../../global/colors';
+import { useSelector } from 'react-redux';
 
 const Tab = createBottomTabNavigator();
 
+
 const TabsNavigator = () => {
+    const totalItems = useSelector(state=>state.cartReducer.totalItems)
     return (
         <Tab.Navigator 
             screenOptions={{
@@ -29,8 +32,8 @@ const TabsNavigator = () => {
                 name="Cart" 
                 component={CartStackNavigator} 
                 options={{
-                    tabBarIcon: ({focused})=>(<Icon name="shopping-cart" size={24} color={focused?colors.secondaryTest:colors.primaryText} />),
-                    //tabBarBadge:0,           
+                    tabBarIcon: ({focused})=>(<Icon name="shopping-cart" size={24} color={focused?colors.secondaryTest:colors.primaryText} />),      
+                    tabBarBadge: totalItems > 0 ? totalItems : undefined 
                 }}
                 />
                 <Tab.Screen 

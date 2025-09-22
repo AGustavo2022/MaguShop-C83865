@@ -41,7 +41,10 @@ const ProductScreen = () => {
             <JosefinSansRegular style={styles.price}>Precio: ${product.price}</JosefinSansRegular>
             <Pressable
                 style={({ pressed }) => [{ opacity: pressed ? 0.95 : 1 }, styles.addToCartButton]}
-                onPress={()=>dispatch(addItemTocart({product:product,quantity:1}))}>
+                onPress={() => {
+                    dispatch(addItemTocart({ product: product, quantity: 1 }));
+                }
+                }>
                 <JosefinSansRegular style={styles.textAddToCart}>Agregar al carrito</JosefinSansRegular>
             </Pressable>
         </ScrollView>

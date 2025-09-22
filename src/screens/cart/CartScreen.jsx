@@ -9,7 +9,7 @@ import JosefinSansRegular from '../../components/JosefinSans-Regular'
 const CartScreen = () => {
   const cartItems = useSelector(state=>state.cartReducer.cartItems)
   const total = useSelector(state=>state.cartReducer.total)
-    const dispatch = useDispatch()
+  const dispatch = useDispatch()
   
   const FooterComponent = () => (
     <View style={styles.footerContainer}>
