@@ -36,7 +36,6 @@ const Header = ({ title, title2, subtitle }) => {
         {
           canGoBack && <Pressable onPress={() => navigation.goBack()}><Icon name="arrow-left-circle" size={32} color={colors.primaryText} /></Pressable>
         }
-        {/* <Image source={require('../../assets/logoo.svg')} /> No se puede SVG así */}
         </View>
         <JosefinSansRegular style={styles.subtitle}>{subtitle}</JosefinSansRegular>
         <Pressable style={styles.logout} onPress={handleClearSession}><Icon name="log-out" size={32} color={colors.primaryText} /></Pressable>

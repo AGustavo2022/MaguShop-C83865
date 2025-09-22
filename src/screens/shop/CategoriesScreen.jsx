@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, FlatList,Pressable } from 'react-native'
+import { StyleSheet, Image, FlatList,Pressable } from 'react-native'
 import FlatCard from '../../components/FlatCard';
 import { useDispatch } from 'react-redux';
 import { setCategorySelected } from '../../store/slices/shopSlice';

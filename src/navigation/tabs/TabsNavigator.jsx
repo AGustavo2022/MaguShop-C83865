@@ -3,7 +3,7 @@ import ShopStackNavigator from '../shop/ShopStackNavigator';
 import CartStackNavigator from '../cart/CartStackNavigator';
 import ProfileStackNavigator from '../profile/ProfileStackNavigator';
 import Icon from 'react-native-vector-icons/Feather'
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { colors } from '../../global/colors';
 import { useSelector } from 'react-redux';
 

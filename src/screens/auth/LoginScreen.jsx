@@ -25,7 +25,6 @@ const LoginScreen = ({ navigation, route }) => {
     }
 
     useEffect(() => {
-        //console.log("Resultado del login", result)
         (async () => {
             if (result.status === "fulfilled") {
                 try {

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, FlatList,Pressable } from 'react-native'
+import { StyleSheet, FlatList,Pressable } from 'react-native'
 import FlatCard from '../../components/FlatCard'
 import { useEffect, useState } from 'react'
 import Search from '../../components/Search'
