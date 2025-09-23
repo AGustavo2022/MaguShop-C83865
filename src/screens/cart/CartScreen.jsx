@@ -3,7 +3,7 @@ import { colors } from '../../global/colors'
 import FlatCard from '../../components/FlatCard'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { useDispatch, useSelector } from 'react-redux'
-import { removeItems } from '../../store/slices/cartSlice'
+import { removeItems, clearCart } from '../../store/slices/cartSlice'
 import JosefinSansRegular from '../../components/JosefinSans-Regular'
 
 const CartScreen = () => {
@@ -14,7 +14,8 @@ const CartScreen = () => {
   const FooterComponent = () => (
     <View style={styles.footerContainer}>
       <JosefinSansRegular style={styles.footerTotal}>Total: $ {total} </JosefinSansRegular>
-      <Pressable style={styles.confirmButton}>
+      <Pressable style={styles.confirmButton}
+        onPress={() => dispatch(clearCart())}>
         <JosefinSansRegular style={styles.confirmButtonText}>Confirmar</JosefinSansRegular>
       </Pressable>
     </View>
